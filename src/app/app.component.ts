@@ -34,4 +34,16 @@ export class AppComponent {
   removeHero(hero: any){
     this.heroes = this.heroes.filter(item => item.code != hero.code);
   }
+
+  saveForm(){
+    const formData = {...this.formHero};
+    this.heroes.push(formData);
+    this.formHero = {
+      code: "",
+      name: "",
+      avatar: "",
+      attack: 0,
+      gender: "Nam"
+    }
+  }
 }
