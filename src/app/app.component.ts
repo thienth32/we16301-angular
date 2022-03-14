@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   formHero: any = {
-    code: "",
+    id: "",
     name: "",
     avatar: "",
     attack: 0,
@@ -16,8 +17,25 @@ export class AppComponent {
 
   heroes: Array<any> = [];
 
+  constructor(private http: HttpClient){}
+
+  ngOnInit(): void {
+    // gửi http lên json server để lấy danh sách heroes
+    // sau khi nhận đc phản hồi từ server 
+    // thực hiện gán dữ liệu cho biến heroes
+    this.http.get<any>("http://localhost:3000/heroes")
+      .subscribe(data => {
+        this.heroes = data;
+      })
+  }
+
   removeHero(hero: any){
-    this.heroes = this.heroes.filter(item => item.code != hero.code);
+    const url = `http://localhost:3000/heroes/${hero.id}`;
+    this.http.delete<any>(url)
+        .subscribe(data => {
+          this.heroes = this.heroes.filter(item => item.id != hero.id);
+        })
+    
   }
 
   updateHero(hero: any){
@@ -27,24 +45,23 @@ export class AppComponent {
   saveForm(){
     // spread operator
     const formData = {...this.formHero};
-    // kiểm tra xem code trong form đã tồn tại ở trong this.heroes hay chưa
-    // nếu tồn tại rồi thì cập nhật
-    // nếu chưa thì tạo mới
-    let index = -1;
-    this.heroes.forEach((e, i) => {
-      if(e.code == formData.code){
-        index = i;
-      }
-    });
-
-    if(index != -1){
-      this.heroes[index] = formData;
+    
+    if(formData.id == ""){
+      this.http.post<any>("http://localhost:3000/heroes", formData)
+          .subscribe(data => {
+            this.heroes.push(data);
+          })
     }else{
-      this.heroes.push(formData);
+      const url = `http://localhost:3000/heroes/${formData.id}`;
+      this.http.put<any>(url, formData)
+          .subscribe(data => {
+            const ind = this.heroes.findIndex(item => item.id == data.id);
+            this.heroes[ind] = data;
+          })
     }
     
     this.formHero = {
-      code: "",
+      id: "",
       name: "",
       avatar: "",
       attack: 0,
