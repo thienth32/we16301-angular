@@ -36,21 +36,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-4" *ngFor="let item of heroes">
-      <div class="card">
-        <img [src]="item.avatar" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{item.name}}</h5>
-          <div class="card-body">
-            <h5>Thông tin</h5>
-            <p>Tuổi: {{item.birthDate | getAge}} tuổi</p>
-            <p>Sức mạnh: {{item.attack}}</p>
-            <p>Ngày sinh: {{item.birthDate | date: "dd/MM/YYY"}}</p>
-          </div>
-          <a href="#" class="btn btn-primary">Cập nhật</a>
-        </div>
-      </div>
-    
-    </div>
+    <hero-item class="col-4"
+      *ngFor="let item of heroes"
+      [data-hero]="item"
+      ></hero-item>    
   </div>
 </div>

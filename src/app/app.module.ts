@@ -7,11 +7,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GetAgePipe } from './helpers/pipes/get-age.pipe';
+import { HeroItemComponent } from './components/hero-item/hero-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetAgePipe
+    GetAgePipe,
+    HeroItemComponent
   ],
   imports: [
     BrowserModule,
