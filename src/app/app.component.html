@@ -39,6 +39,7 @@
     <hero-item class="col-4"
       *ngFor="let item of heroes"
       [data-hero]="item"
+      (childCall)="childRemove($event)"
       ></hero-item>    
   </div>
 </div>

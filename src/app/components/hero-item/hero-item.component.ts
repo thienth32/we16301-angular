@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'hero-item',
@@ -7,9 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeroItemComponent implements OnInit {
   @Input("data-hero") heroData: any;
+  @Output('childCall') call = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
+  }
+  remove(){
+    this.call.emit(this.heroData);
   }
 
 }

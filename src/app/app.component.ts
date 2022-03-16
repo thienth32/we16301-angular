@@ -68,4 +68,8 @@ export class AppComponent implements OnInit{
       gender: "Nam"
     }
   }
+
+  childRemove(data: any){
+    this.heroes = this.heroes.filter(item => item.id != data.id);
+  }
 }
