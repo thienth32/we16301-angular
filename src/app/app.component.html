@@ -35,6 +35,24 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-4" *ngFor="let item of heroes">
+      <div class="card">
+        <img [src]="item.avatar" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <div class="card-body">
+            <h4>Thông tin</h4>
+            <p>Tuổi: {{item.birthDate | getAge}} tuổi</p>
+            <p>Sức mạnh: {{item.attack}}</p>
+            <p>Ngày sinh: {{item.birthDate | date: "dd/MM/YYY"}}</p>
+          </div>
+          <a href="#" class="btn btn-primary">Cập nhật</a>
+        </div>
+      </div>
+    
+    </div>
+  </div>
   <table class="table table-hover">
     <thead>
       <th>Code</th>
@@ -42,6 +60,8 @@
       <th>Ảnh</th>
       <th>Giới tính</th>
       <th>Sức mạnh</th>
+      <th>Ngày sinh</th>
+      <th>Tuổi</th>
       <th></th>
     </thead>
     <tbody *ngIf="heroes.length > 0">
@@ -52,7 +72,9 @@
           <img [src]="h.avatar" width="150">
         </td>
         <td>{{h.gender}}</td>
-        <td>{{h.attack}}</td>
+        <td>{{h.attack | currency: "VND"}}</td>
+        <td>{{h.birthDate | date: "dd/MM/YYY"}}</td>
+        <td>{{h.birthDate | getAge}}</td>
         <td>
           <button (click)="updateHero(h)" class="btn btn-sm btn-info">Sửa</button>
           <button (click)="removeHero(h)" class="btn btn-sm btn-danger">Xóa</button>

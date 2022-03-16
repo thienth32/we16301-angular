@@ -5,21 +5,24 @@
       "name": "Siêu xayda level 2",
       "avatar": "https://i.pinimg.com/736x/d7/bd/23/d7bd2389fd03889edc309504c3377409.jpg",
       "attack": "1000",
-      "gender": "Nam"
+      "gender": "Nam",
+      "birthDate": "2020-01-15"
     },
     {
       "id": 3,
       "name": "Ma bư béo",
       "avatar": "https://fandom.vn/wp-content/uploads/2019/06/mcu-wolverine-1.jpg",
       "attack": 100,
-      "gender": "Nam"
+      "gender": "Nam",
+      "birthDate": "1982-06-08"
     },
     {
       "id": 4,
       "name": "Venom",
       "avatar": "https://upload.wikimedia.org/wikipedia/vi/thumb/f/fe/Venom_Let_There_Be_Carnage_VN_poster.jpg/220px-Venom_Let_There_Be_Carnage_VN_poster.jpg",
       "attack": "300",
-      "gender": "Nữ"
+      "gender": "Nữ",
+      "birthDate": "1973-12-04"
     }
   ],
   "enemies": []
