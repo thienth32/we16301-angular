@@ -4,22 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GetAgePipe } from './helpers/pipes/get-age.pipe';
-import { HeroItemComponent } from './components/hero-item/hero-item.component';
+import { LoginComponent } from './screens/login/login.component';
+import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetAgePipe,
-    HeroItemComponent
+    LoginComponent,
+    HomeLayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
