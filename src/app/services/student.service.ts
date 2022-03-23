@@ -10,7 +10,7 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
 
-  list(): Observable<any>{
-    return this.http.get<any>(environment.student_api);
+  list(keyword: string = ""): Observable<any>{
+    return this.http.get<any>(`${environment.student_api}?email_like=${keyword}`);
   }
 }

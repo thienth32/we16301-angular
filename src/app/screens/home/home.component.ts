@@ -14,9 +14,13 @@ export class HomeComponent implements OnInit {
     this.listStudent();
   }
 
-  listStudent(){
-    this.studentService.list().subscribe(data => {
+  listStudent(keyword: string = ""){
+    this.studentService.list(keyword).subscribe(data => {
       this.students = data;
     });
+  }
+  search(e: any){
+    let keyword = e.target.value;
+    this.listStudent(keyword);
   }
 }

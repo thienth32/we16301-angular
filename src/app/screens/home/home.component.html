@@ -1,4 +1,6 @@
 <p>home works!</p>
+<input type="text" (keyup)="search($event)">
+<br>
 <ul>
     <li *ngFor="let st of students">{{st.email}}</li>
 </ul>
