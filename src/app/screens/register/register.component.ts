@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { comparePasswordValidator } from 'src/app/helpers/validators/comparePassword';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-register',
@@ -27,13 +29,23 @@ export class RegisterComponent implements OnInit {
     phoneNumber: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required)
   })
-  constructor() { }
+  constructor(private studentService: StudentService,
+              private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.registerForm.controls['confirmPassword'].valueChanges.subscribe(data => {
       this.registerForm.controls['confirmPassword'].addValidators([
         comparePasswordValidator(this.registerForm.controls['password'].value)
       ]);
+    })
+  }
+
+  addStudent(){
+    let data = {...this.registerForm.value};
+    delete data.confirmPassword;
+    this.studentService.add(data).subscribe(resp => {
+      this.router.navigate(['/']);
     })
   }
 

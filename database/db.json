@@ -21,7 +21,7 @@
       "birthday": "1985-10-11",
       "schoolfee": "2500000",
       "marks": {
-        "ADAV" : 9 
+        "ADAV": 9
       }
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "username": "thienth",
-      "password": "123456",      
+      "password": "123456",
       "fullname": "trần hữu thiện",
       "email": "thienth@gmail.com",
       "gender": "true",
@@ -55,6 +55,15 @@
       "birthday": "1990-12-31T17:00:00.000Z",
       "schoolfee": 100,
       "id": 5
+    },
+    {
+      "name": "Bùi Quỳnh Ninh",
+      "email": "ninhbq@fpt.edu.vn",
+      "password": "123456",
+      "birthDate": "2014-02-14",
+      "phoneNumber": "0987654321",
+      "address": "việt nam",
+      "id": 6
     }
   ],
   "subjects": [

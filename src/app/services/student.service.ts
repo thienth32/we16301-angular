@@ -13,4 +13,8 @@ export class StudentService {
   list(keyword: string = ""): Observable<any>{
     return this.http.get<any>(`${environment.student_api}?email_like=${keyword}`);
   }
+
+  add(data: any): Observable<any>{
+    return this.http.post<any>(environment.student_api, {...data});
+  }
 }
