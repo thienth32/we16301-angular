@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { comparePasswordValidator } from 'src/app/helpers/validators/comparePassword';
 
 @Component({
   selector: 'app-register',
@@ -18,8 +19,7 @@ export class RegisterComponent implements OnInit {
       Validators.minLength(6)
     ]),
     confirmPassword: new FormControl('', [
-      Validators.required,
-      this.ValidateCompareConfirmPassword()
+      Validators.required
     ]),
     birthDate: new FormControl(new Date(), [
       Validators.required
@@ -30,17 +30,13 @@ export class RegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.registerForm.controls['confirmPassword'].valueChanges.subscribe(data => {
+      this.registerForm.controls['confirmPassword'].addValidators([
+        comparePasswordValidator(this.registerForm.controls['password'].value)
+      ]);
+    })
   }
 
-  ValidateCompareConfirmPassword(control: AbstractControl): ValidationErrors | null{
-    // debugger;
-    console.log(this.registerForm.value);
-    // if(control.value != this.registerForm.controls['password'].value){
-    //   return {
-    //     confirmPasswordInvalid: true
-    //   }
-    // }
-    return null;
-  }
+  
 
 }

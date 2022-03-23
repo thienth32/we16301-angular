@@ -48,7 +48,7 @@
                                 || registerForm.controls['confirmPassword'].dirty 
                             )">
                     <span class="text-danger" *ngIf="registerForm.controls['confirmPassword'].hasError('required')">Hãy nhập mật khẩu</span>
-                    <span class="text-danger" *ngIf="registerForm.controls['confirmPassword'].hasError('confirmPasswordInvalid')">Xác nhận mật khẩu chưa khớp</span>
+                    <span class="text-danger" *ngIf="registerForm.controls['confirmPassword'].hasError('matchConfirmPassword')">Xác nhận mật khẩu chưa khớp</span>
                 </div>
             </div>
             <div class="form-group">
