@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GetAgePipe } from './helpers/pipes/get-age.pipe';
 import { LoginComponent } from './screens/login/login.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
+import { RegisterComponent } from './screens/register/register.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component
     GetAgePipe,
     LoginComponent,
     HomeLayoutComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
