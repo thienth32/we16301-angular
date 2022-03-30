@@ -11,6 +11,8 @@ import { LoginComponent } from './screens/login/login.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { RegisterComponent } from './screens/register/register.component';
 import { HomeComponent } from './screens/home/home.component';
+import { QuizComponent } from './screens/quiz/quiz.component';
+import { QuizResultComponent } from './screens/quiz-result/quiz-result.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HomeComponent } from './screens/home/home.component';
     HomeLayoutComponent,
     RegisterComponent,
     HomeComponent,
+    QuizComponent,
+    QuizResultComponent,
   ],
   imports: [
     BrowserModule,

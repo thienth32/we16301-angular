@@ -17,4 +17,12 @@ export class StudentService {
   add(data: any): Observable<any>{
     return this.http.post<any>(environment.student_api, {...data});
   }
+
+  find(id: number): Observable<any>{
+    return this.http.get<any>(`${environment.student_api}/${id}`);
+  }
+
+  update(obj: any): Observable<any>{
+    return this.http.put<any>(`${environment.student_api}/${obj.id}`, {...obj});
+  }
 }

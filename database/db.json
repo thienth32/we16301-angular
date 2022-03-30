@@ -9,7 +9,9 @@
       "gender": "true",
       "birthday": "1995-12-21",
       "schoolfee": "1500000",
-      "marks": "0"
+      "marks": {
+        "LAYO": "3.00"
+      }
     },
     {
       "id": 2,
@@ -21,7 +23,8 @@
       "birthday": "1985-10-11",
       "schoolfee": "2500000",
       "marks": {
-        "ADAV": 9
+        "ADAV": 9,
+        "LAYO": "5.00"
       }
     },
     {
@@ -33,7 +36,7 @@
       "gender": "false",
       "birthday": "1993-05-15",
       "schoolfee": "2000000",
-      "marks": "0"
+      "marks": {}
     },
     {
       "username": "thienth",
@@ -43,7 +46,7 @@
       "gender": "true",
       "birthday": "1991-01-01",
       "schoolfee": "11000",
-      "marks": "8",
+      "marks": {},
       "id": 4
     },
     {
@@ -54,6 +57,9 @@
       "gender": "true",
       "birthday": "1990-12-31T17:00:00.000Z",
       "schoolfee": 100,
+      "marks": {
+        "LAYO": "3.00"
+      },
       "id": 5
     },
     {
@@ -63,6 +69,7 @@
       "birthDate": "2014-02-14",
       "phoneNumber": "0987654321",
       "address": "việt nam",
+      "marks": {},
       "id": 6
     }
   ],

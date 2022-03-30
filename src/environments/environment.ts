@@ -4,7 +4,9 @@
 const baseAPIURL = "http://localhost:3000";
 export const environment = {
   production: false,
-  student_api: `${baseAPIURL}/students`
+  base_api: baseAPIURL,
+  student_api: `${baseAPIURL}/students`,
+  subject_api: `${baseAPIURL}/subjects`
 };
 
 /*
