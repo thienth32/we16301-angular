@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,27 +10,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  // form trong angular
-  /**
-   * Bắt buộc:
-   * 1. FormsModule trong app module
-   * 2. Lựa chọn sử dụng loại form nào
-   * - template driven form (ngModel)
-   * - reactive form (FormGroup, FormControl)
-   * 2.1 Nếu sử dụng reactive form => bổ sung thêm ReactiveFormsModule trong app module
-   */
-
-  // tạo ra reactive form object
-  loginForm: FormGroup = new FormGroup({
-    email: new FormControl('', [
-      Validators.required,
-      Validators.email
-    ]),
-    password: new FormControl('', Validators.required)
-  });
-  constructor() { }
+  constructor(private socialAuthService: SocialAuthService,
+    private authService: AuthService,
+    private router: Router) {
+  }
 
   ngOnInit(): void {
+  }
+
+  googleLogin(){
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
+      .then(authData => {
+        this.authService.login(authData.email, authData.id)
+        .subscribe(response => {
+          if(response){
+            this.router.navigate(['/']);
+          }else{
+            alert("Tài khoản không tồn tại");
+          }
+        })
+      })
   }
 
 }

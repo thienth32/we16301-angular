@@ -2,75 +2,24 @@
   "students": [
     {
       "id": 1,
-      "username": "teonv",
-      "password": "iloveyou",
-      "fullname": "Nguyễn Văn Tèo",
-      "email": "teonv@fpt.edu.vn",
-      "gender": "true",
-      "birthday": "1995-12-21",
-      "schoolfee": "1500000",
+      "name": "Hữu Thiện Trần",
+      "googleId": "113371492414931328821",
+      "email": "thienth@fpt.edu.vn",
+      "avatar": "https://lh3.googleusercontent.com/a-/AOh14Ghb4FVOe6nNmroH4IA8W4DNWMXSX_X8y4FCh3z1=s96-c",
       "marks": {
         "LAYO": "3.00"
       }
     },
     {
       "id": 2,
-      "username": "pheonv",
-      "password": "iloveyou",
-      "fullname": "Nguyễn Văn Chí Phèo",
-      "email": "pheonv@fpt.edu.vn",
-      "gender": "true",
-      "birthday": "1985-10-11",
-      "schoolfee": "2500000",
+      "name": "thienth",
+      "googleId": "110567393816517144610",
+      "email": "thienth32@gmail.com",
+      "avatar": "https://lh3.googleusercontent.com/a-/AOh14GhdeFlXPqqwB2Sh3Q-uEBAGCHyKxy7YYbqlZGw-pQ=s96-c",
       "marks": {
         "ADAV": 9,
         "LAYO": "5.00"
       }
-    },
-    {
-      "id": 3,
-      "username": "nopt",
-      "password": "iloveyou",
-      "fullname": "Phạm Thị Nở",
-      "email": "nopt@fpt.edu.vn",
-      "gender": "false",
-      "birthday": "1993-05-15",
-      "schoolfee": "2000000",
-      "marks": {}
-    },
-    {
-      "username": "thienth",
-      "password": "123456",
-      "fullname": "trần hữu thiện",
-      "email": "thienth@gmail.com",
-      "gender": "true",
-      "birthday": "1991-01-01",
-      "schoolfee": "11000",
-      "marks": {},
-      "id": 4
-    },
-    {
-      "fullname": "thienth",
-      "username": "thienth",
-      "email": "thienth3@fe.edu.vn",
-      "password": "123456",
-      "gender": "true",
-      "birthday": "1990-12-31T17:00:00.000Z",
-      "schoolfee": 100,
-      "marks": {
-        "LAYO": "3.00"
-      },
-      "id": 5
-    },
-    {
-      "name": "Bùi Quỳnh Ninh",
-      "email": "ninhbq@fpt.edu.vn",
-      "password": "123456",
-      "birthDate": "2014-02-14",
-      "phoneNumber": "0987654321",
-      "address": "việt nam",
-      "marks": {},
-      "id": 6
     }
   ],
   "subjects": [

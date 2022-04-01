@@ -1,0 +1,14 @@
+
+.login-google{
+    margin-top: 50px;
+    background-color: orange;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    color: #fff;
+    padding: 0 20px;
+    cursor: pointer;
+}
+.login-google:hover{
+    box-shadow: 10px 10px 20px #ccc;
+}
