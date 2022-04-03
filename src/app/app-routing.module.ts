@@ -6,6 +6,7 @@ import { LoginComponent } from './screens/login/login.component';
 import { QuizResultComponent } from './screens/quiz-result/quiz-result.component';
 import { QuizComponent } from './screens/quiz/quiz.component';
 import { RegisterComponent } from './screens/register/register.component';
+import { UploadFormComponent } from './screens/upload-form/upload-form.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: "dang-ky",
     component: RegisterComponent
+  },
+  {
+    path: "upload-file",
+    component: UploadFormComponent
   },
   {
     path: "",

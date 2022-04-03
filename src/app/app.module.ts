@@ -15,7 +15,9 @@ import { QuizComponent } from './screens/quiz/quiz.component';
 import { QuizResultComponent } from './screens/quiz-result/quiz-result.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { environment } from 'src/environments/environment';
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { UploadFormComponent } from './screens/upload-form/upload-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { environment } from 'src/environments/environment';
     HomeComponent,
     QuizComponent,
     QuizResultComponent,
+    UploadFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
   ],
   providers: [
     {
